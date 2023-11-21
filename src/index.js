@@ -1,14 +1,15 @@
   import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Hello from './Hello';
+import Card from './Card';
 import reportWebVitals from './reportWebVitals';
 import 'tachyons';
+import { robots } from './robots'; // {} is used because export in this file isn't default, if there was for example another variable cats it would be {robots, cats}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Hello greeting={'Hello React Ninja'} />
+    <Card id={ robots[0].id } name = { robots[0].name } email={ robots[0].email } />
   </React.StrictMode>
 );
 
