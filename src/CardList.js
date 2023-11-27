@@ -14,7 +14,7 @@ const CardList = ( {robots} ) => {
 						name = { robots[i].name } 
 						email={ robots[i].email } /> 
 					);
-					// when doing a loop in React components must have key prop
+					// when doing a loop components must have key prop
 				})
 			}
 		</div>
