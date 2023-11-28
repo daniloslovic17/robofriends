@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import CardList from "./CardList";
-import SearchBox from "./SearchBox"
+import SearchBox from "./SearchBox";
+import Scroll from "./Scroll";
 import './App.css';
 // import { robots } from './robots'; // {} is used because export in this file isn't default, if there was for example another variable cats it would be {robots, cats}
 // (not required anymore due to fetch part)
@@ -36,7 +37,9 @@ class App extends Component {
 				<div className='tc' >
 					<h1 className='f1'>Robofriends</h1>
 					<SearchBox searchChange = { this.onSearchChange } />
-					<CardList robots = { filteredRobots } />
+					<Scroll>
+						<CardList robots = { filteredRobots } />
+					</Scroll>
 				</div>
 			);
 		}
