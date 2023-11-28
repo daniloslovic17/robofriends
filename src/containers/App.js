@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
 import Scroll from "../components/Scroll";
+import ErrorBoundry from "../components/ErrorBoundry"
 import './App.css';
 // import { robots } from './robots'; // {} is used because export in this file isn't default, if there was for example another variable cats it would be {robots, cats}
 // (not required anymore due to fetch part)
@@ -39,7 +40,9 @@ class App extends Component {
 					<h1 className='f1'>Robofriends</h1>
 					<SearchBox searchChange = { this.onSearchChange } />
 					<Scroll>
-						<CardList robots = { filteredRobots } />
+						<ErrorBoundry>
+							<CardList robots = { filteredRobots } />
+						</ErrorBoundry>
 					</Scroll>
 				</div>
 			);
